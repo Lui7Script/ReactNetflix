@@ -26,11 +26,9 @@ export default () => {
 
                {movieList.map((item,key)=>(
                    
-                   <div>
-                       {item.title}
-                   </div>
+                <MovieRow key={key} title={item.title} items={item.items}/>
 
-               )) }
+            )) }
  
            </section>
         
