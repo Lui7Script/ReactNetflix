@@ -59,15 +59,19 @@ export default {
     },
 
     getMovieInfo: async (movieId, type) => {
-        let info = {}
+        let info = {};
         if (movieId) {
-            switch (type) {
+            switch (type){
                 case 'movie':
                      info = basicFetch(`./movie/${movieId}?language=pt-BR&api_key=${API_KEY}`);      
                 break;
                 case 'tv':
                     info = basicFetch(`./tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);  
                 break;
+
+                default:
+                    info=null;
+                    break;
             }
         }
         return info;
